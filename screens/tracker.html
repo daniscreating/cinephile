@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas</title>
+    <!-- Favicon -->
+	<link rel="icon"  href="../assets/img/favicon.svg">
+    <!-- Google fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/3948aa0151.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Cinephile <i class="fa-regular fa-circle" style="color: #0c0d0d;"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+                        <a class="nav-link" href="#">Películas</a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="#">Listas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Perfil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Ver más
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="#">Configuración</a></li>
+                            <li><a class="dropdown-item" href="#">Soporte</a></li>
+                            <li><a class="dropdown-item" href="#">Invitar amigos</a></li>
+                            <li><a class="dropdown-item" href="#">Términos y privacidad</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="movies">
+        <div class="container mt-5">
+            <div class="row mb-3"> 
+                <h1 class="col-8 mr-3">Mis películas</h1>
+                <button class="btn btn-sm mb-3 col-4 btn-add-movie" data-bs-toggle="modal" data-bs-target="#addMovieModal">
+                    <span class="d-none d-sm-inline">Agregar película</span>
+                    <i class="fa-solid fa-plus d-inline" style="color: inherit;"></i>
+                </button>
+            </div>
+        
+            
+            <div class="row" id="trackerList">
+                <!-- Se repite este bloque para cada película -->
+                <!-- <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card mb-4">
+                        <button type="button" class="btn btn-danger btn-sm">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </button>
+                        <img src="https://m.media-amazon.com/images/M/MV5BM2RjMmU3ZWItYzBlMy00ZmJkLWE5YzgtNTVkODdhOWM3NGZhXkEyXkFqcGdeQXVyNDA5Mjg5MjA@._V1_.jpg" class="card-img-top custom-card-img" alt="Película 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Paris, Texas</h5>
+                            <p class="card-text custom-info">
+                                <span class="director">Wim Wenders,</span>
+                                <span class="year">1984</span>
+                            </p>
+                            <p class="card-text">Calificación: ★★★★☆</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card mb-4">
+                        <button type="button" class="btn btn-danger delete-button">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </button>
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTc3NzI0MzQ3M15BMl5BanBnXkFtZTcwMzA0MDMzNA@@._V1_.jpg" class="card-img-top custom-card-img" alt="Película 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Película 4</h5>
+                            <p class="card-text custom-info">
+                                <span class="director">Wong Kar-wai,</span>
+                                <span class="year">1995</span>
+                            </p>
+                            <p class="card-text">Calificación: ★★★★☆</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card mb-4">
+                        <button type="button" class="btn btn-danger delete-button">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </button>
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTg2NTI5MTMwNl5BMl5BanBnXkFtZTgwODM5MDY1OTE@._V1_.jpg" class="card-img-top custom-card-img" alt="Película 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Película 4</h5>
+                            <p class="card-text">Descripción de la película 4.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card mb-4">
+                        <button type="button" class="btn btn-danger delete-button">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </button>
+                        <img src="https://m.media-amazon.com/images/M/MV5BMjlmZmI5MDctNDE2YS00YWE0LWE5ZWItZDBhYWQ0NTcxNWRhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" class="card-img-top custom-card-img" alt="Película 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Película 4</h5>
+                            <p class="card-text">Descripción de la película 4.</p>
+                        </div>
+                    </div>
+                </div> -->
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal form para agregar peliculas -->
+    <div class="modal fade" id="addMovieModal" tabindex="-1" role="dialog" aria-labelledby="addMovieLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addMovieModal">Agregar nueva película</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="" id="movieForm" method="post" enctype="multipart/form-data" novalidate>
+                <div class="form-row mb-3">
+                    <div class="form-group col-md-6">
+                        <label for="inputFile" class="form-label">Imagen</label>
+                        <input class="form-control" name="image"  type="url" id="inputFile" placeholder="Ingresa el url de la imagen">
+                    </div>
+                </div>
+                <div class="form-group col-md-6 mb-3">
+                    <label for="inputTitle" class="mb-2">Nombre de la película</label>
+                    <input type="text" name="title"  class="form-control" id="inputTitle" placeholder="Nombre" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6 mb-3">
+                        <label for="inputDirector">Director</label>
+                        <input type="text" name="director" class="form-control" id="inputDirector" required>
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                        <label for="inputYear">Año</label>
+                        <input type="number" name="year" maxlength="4" pattern="\d{4}" min="1900" max="2023"  required class="form-control" id="inputYear">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="starsRating">Calificación</label>
+                    <select class="rating" name="rating" id="starsRating">
+                        <option value="1">
+                            ★☆☆☆☆
+                        </option>
+                        <option value="2">
+                            ★★☆☆☆
+                        </option>
+                        <option value="3">
+                            ★★★☆☆
+                        </option>
+                        <option value="4">
+                            ★★★★☆
+                        </option>
+                        <option value="5">
+                            ★★★★★
+                        </option>
+                    </select>
+                </div> 
+              </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary" form="movieForm" id="submitBtnForm" data-editing-index>Enviar</button>
+            </div>
+            </div>
+           
+          </div>
+        </div>
+    </div>
+    
+
+    <footer class="footer bg-white text-black py-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<h5>Cinephile</h5>
+				</div>
+				<div class="col-md-4">
+					<h5>Enlaces</h5>
+					<ul class="list-unstyled">
+						<li><a href="#">Acerca de</a></li>
+						<li><a href="#">Ayuda</a></li>
+						<li><a href="#">Invitar amigos</a></li>
+						<li><a href="#">Términos y privacidad</a></li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<h5>Síguenos</h5>
+					<ul class="list-inline">
+						<li class="list-inline-item "><a href="#"><i class="fab fa-facebook"></i></a></li>
+						<li class="list-inline-item "><a href="#"><i class="fab fa-twitter"></i></a></li>
+						<li class="list-inline-item "><a href="#"><i class="fab fa-instagram"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-md-12">
+					<p class="text-center">&copy; 2023 Cinephile. Todos los derechos reservados.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="../assets/app.js"></script>
+</body>
+</html>
